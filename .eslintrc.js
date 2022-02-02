@@ -24,6 +24,7 @@ module.exports = {
     'import/extensions': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/style-prop-object': 'off',
+    'react/jsx-no-bind': 'off',
   },
   settings: {
     'import/resolver': {

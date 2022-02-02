@@ -7,15 +7,19 @@ import Header from '../Header';
 import Router from '../Router';
 
 function App() {
-  const [theme] = useState<string>('light');
+  const [theme, setTheme] = useState<string>('light');
 
   const currentTheme = theme === 'dark' ? dark : light;
+
+  function toggleTheme() {
+    setTheme((prevState) => (prevState === 'dark' ? 'light' : 'dark'));
+  }
 
   return (
     <ThemeProvider theme={currentTheme}>
       <GlobalStyle />
       <div className="App">
-        <Header />
+        <Header currentTheme={theme} toggleTheme={toggleTheme} />
         <Router />
       </div>
     </ThemeProvider>
