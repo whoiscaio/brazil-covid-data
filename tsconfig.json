@@ -22,5 +22,10 @@
   },
   "include": [
     "src"
-  ]
+  ],
+  "overrides": [{
+    "files": [
+      "src/styles/styled.d.ts"
+    ]
+  }]
 }
