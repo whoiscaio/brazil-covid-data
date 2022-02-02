@@ -3,6 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import GlobalStyle from '../../styles/GlobalStyle';
 
 import { dark, light } from '../../styles/themes';
+import Header from '../Header';
 import Router from '../Router';
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
     <ThemeProvider theme={currentTheme}>
       <GlobalStyle />
       <div className="App">
-        Brazil Covid Data
+        <Header />
         <Router />
       </div>
     </ThemeProvider>
