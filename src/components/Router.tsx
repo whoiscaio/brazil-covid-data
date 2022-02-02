@@ -6,7 +6,7 @@ function Router() {
     <Routes>
       <Route path="/" element={<HomePage />} />
     </Routes>
-  )
+  );
 }
 
 export default Router;
