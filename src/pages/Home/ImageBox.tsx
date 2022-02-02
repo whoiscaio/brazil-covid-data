@@ -1,10 +1,14 @@
 import { ReactComponent as MapComponent } from '../../assets/images/map.svg';
 import { ImageBoxContainer } from './styles';
 
-function ImageBox() {
+type ImageBoxProps = {
+  svgRef: any,
+}
+
+function ImageBox({ svgRef }: ImageBoxProps) {
   return (
     <ImageBoxContainer>
-      <MapComponent id="image" />
+      <MapComponent id="image" ref={svgRef} />
     </ImageBoxContainer>
   );
 }
