@@ -23,6 +23,7 @@ module.exports = {
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
     'import/extensions': 'off',
     'react/react-in-jsx-scope': 'off',
+    'react/style-prop-object': 'off',
   },
   settings: {
     'import/resolver': {

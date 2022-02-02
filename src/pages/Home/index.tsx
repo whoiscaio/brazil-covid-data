@@ -1,8 +1,13 @@
+import AppInfo from './AppInfo';
+import ImageBox from './ImageBox';
+import HomepageContainer from './styles';
+
 function HomePage() {
   return (
-    <div>
-      Homepage
-    </div>
+    <HomepageContainer>
+      <AppInfo />
+      <ImageBox />
+    </HomepageContainer>
   );
 }
 
