@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+const PopupContainer = styled.div`
+
+`;
+
 const ImageBoxContainer = styled.div`
   flex: 1;
 
@@ -93,5 +97,5 @@ const HomepageContainer = styled.main`
   }
 `;
 
-export { AppInfoContainer, ImageBoxContainer };
+export { AppInfoContainer, ImageBoxContainer, PopupContainer };
 export default HomepageContainer;
