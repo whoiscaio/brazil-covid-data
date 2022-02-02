@@ -1,6 +1,10 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-const HeaderContainer = styled.header`
+type StyledHeaderProps = {
+  currentTheme: string,
+}
+
+const HeaderContainer = styled.header<StyledHeaderProps>`
   width: 95vw;
   max-width: 1400px;
 
@@ -9,6 +13,29 @@ const HeaderContainer = styled.header`
 
   margin: 0 auto;
   padding: 2rem 0;
+
+  .actions {
+    display: flex;
+    align-items: center;
+
+    button {
+      display: flex;
+      align-items: center;
+
+      cursor: pointer;
+      transition: opacity .1s ease-in;
+
+      &:hover {
+        opacity: .8;
+      }
+    }
+
+    ${({ currentTheme }) => currentTheme === 'dark' && css`
+      img {
+        filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(249deg) brightness(105%) contrast(101%);
+      }
+    `}
+  }
 
   .icon {
 
@@ -30,6 +57,8 @@ const HeaderContainer = styled.header`
     height: 100%;
 
     display: flex;
+
+    margin-right: 1rem;
   }
 
   li {

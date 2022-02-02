@@ -15,7 +15,7 @@ function Header({ currentTheme, toggleTheme }: HeaderProps) {
   const themeImage = currentTheme === 'light' ? moon : sun;
 
   return (
-    <HeaderContainer>
+    <HeaderContainer currentTheme={currentTheme}>
       <div className="icon">
         <NavLink to="/">
           <img src={virus} alt="Virus icon" />

@@ -20,6 +20,11 @@ export default createGlobalStyle`
     text-decoration: none;
   }
 
+  button {
+    background: none;
+    border: 0;
+  }
+
   li {
     list-style: none;
   }
