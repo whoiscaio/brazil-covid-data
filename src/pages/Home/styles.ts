@@ -21,6 +21,12 @@ const ImageBoxContainer = styled.div`
       }
     }
   }
+
+  @media (max-width: 999px) {
+    #image {
+      width: 100%;
+    }
+  }
 `;
 
 const AppInfoContainer = styled.div`
@@ -45,6 +51,32 @@ const AppInfoContainer = styled.div`
   p {
     font-size: 2rem;
   }
+
+  @media (max-width: 999px) {
+    h1 {
+      font-size: 4.8rem;
+      line-height: 5.4rem;
+    }
+
+    p {
+      font-size: 1.8rem;
+    }
+  }
+
+  @media (max-width: 750px) {
+    h1, p {
+      padding-right: 0;
+    }
+
+    h1 {
+      font-size: 4.2rem;
+      padding-top: 1rem;
+    }
+
+    p {
+      font-size: 1.6rem;
+    }
+  }
 `;
 
 const HomepageContainer = styled.main`
@@ -54,6 +86,11 @@ const HomepageContainer = styled.main`
   display: flex;
   
   margin: 0 auto;
+
+  @media (max-width: 750px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export { AppInfoContainer, ImageBoxContainer };
