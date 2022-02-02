@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 
 const HeaderContainer = styled.header`
+  width: 95vw;
   max-width: 1400px;
 
   display: flex;
   justify-content: space-between;
 
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 0;
 
   .icon {
 
