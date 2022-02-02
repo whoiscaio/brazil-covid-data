@@ -7,7 +7,7 @@ import Header from '../Header';
 import Router from '../Router';
 
 function App() {
-  const [theme] = useState<string>('dark');
+  const [theme] = useState<string>('light');
 
   const currentTheme = theme === 'dark' ? dark : light;
 

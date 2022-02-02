@@ -5,7 +5,7 @@ const dark: DefaultTheme = {
   ...pattern,
   colors: {
     ...pattern.colors,
-    background: '#333333',
+    background: '#08080f',
     text: '#F6EDD9',
   },
 };

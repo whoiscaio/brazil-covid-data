@@ -16,7 +16,7 @@ function Header() {
       <div className="links">
         <ul>
           <li><NavLink to="/">Home</NavLink></li>
-          <li><NavLink to="/">About</NavLink></li>
+          <li><NavLink to="/about">About</NavLink></li>
           <li><a href="https://github.com/whoiscaio/brazil-covid-data" target="_blank" rel="noreferrer">Github</a></li>
         </ul>
       </div>

@@ -41,7 +41,20 @@ const HeaderContainer = styled.header`
   }
 
   a {
+    color: ${({ theme }) => theme.colors.text};
     font-size: 1.6rem;
+
+    transition: opacity .14s ease-in;
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+
+  @media (max-width: 600px) {
+    h2 {
+      display: none;
+    }
   }
 `;
 

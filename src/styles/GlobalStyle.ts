@@ -12,6 +12,10 @@ export default createGlobalStyle`
     font-size: 62.5%;
   }
 
+  html, body {
+    background: ${({ theme }) => theme.colors.background};
+  }
+
   a {
     text-decoration: none;
   }
