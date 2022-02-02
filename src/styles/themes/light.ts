@@ -6,7 +6,7 @@ const light: DefaultTheme = {
   colors: {
     ...pattern.colors,
     background: '#F6EDD9',
-    text: '#333333',
+    text: '#08080F',
   },
 };
 
