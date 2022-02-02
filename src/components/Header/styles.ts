@@ -86,6 +86,12 @@ const HeaderContainer = styled.header<StyledHeaderProps>`
       display: none;
     }
   }
+
+  @media (max-width: 300px) {
+    a {
+      font-size: 1.4rem;
+    }
+  }
 `;
 
 export default HeaderContainer;
