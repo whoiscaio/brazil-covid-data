@@ -2,6 +2,25 @@ import styled from 'styled-components';
 
 const ImageBoxContainer = styled.div`
   flex: 1;
+
+  #image {
+    width: 85%;
+
+    margin: 5rem 0;
+
+    transform: translate(10%, -5%);
+
+    path {
+      fill: ${({ theme }) => theme.colors.contrast} !important;
+
+      cursor: pointer;
+      transition: opacity .1s ease-in;
+
+      &:hover {
+        opacity: .6;
+      }
+    }
+  }
 `;
 
 const AppInfoContainer = styled.div`
@@ -14,7 +33,7 @@ const HomepageContainer = styled.main`
 
   display: flex;
   
-  margin: 5rem auto 0;
+  margin: 0 auto;
 `;
 
 export { AppInfoContainer, ImageBoxContainer };
