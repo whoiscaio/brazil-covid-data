@@ -7,8 +7,11 @@ import virus from '../../assets/images/virus.svg';
 function Header() {
   return (
     <HeaderContainer>
-      <div className="image">
-        <img src={virus} alt="Virus icon" />
+      <div className="icon">
+        <NavLink to="/">
+          <img src={virus} alt="Virus icon" />
+          <h2>Brazil Covid Data</h2>
+        </NavLink>
       </div>
       <div className="links">
         <ul>
