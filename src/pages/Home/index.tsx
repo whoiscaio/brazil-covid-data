@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
+
 import useAxios from '../../hooks/useAxios';
+import StateInterface from '../../interfaces/StateInterface';
 import AppInfo from './AppInfo';
 import ImageBox from './ImageBox';
 import Popup from './Popup';
@@ -8,7 +10,7 @@ import HomepageContainer from './styles';
 const REQUEST_URL = 'https://covid19-brazil-api.now.sh/api/report/v1';
 
 function HomePage() {
-  const [hoveredState, setHoveredState] = useState<any>(null);
+  const [hoveredState, setHoveredState] = useState<StateInterface | null>(null);
 
   const [data, loading] = useAxios(REQUEST_URL);
   const mapRef = useRef<SVGAElement | null>(null);

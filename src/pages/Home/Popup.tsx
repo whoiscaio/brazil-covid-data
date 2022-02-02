@@ -1,7 +1,8 @@
+import StateInterface from '../../interfaces/StateInterface';
 import { PopupContainer } from './styles';
 
 type PopupProps = {
-  hoveredState: any,
+  hoveredState: StateInterface,
 }
 
 function Popup({ hoveredState }: PopupProps) {
