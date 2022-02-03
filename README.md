@@ -23,7 +23,7 @@ Go to the desired folder and run
 ```bash
   $ git clone https://github.com/whoiscaio/brazil-covid-data
 
-  $ cd mycontacts-api
+  $ cd brazil-covid-data
 ```
 
 Then, install the packages and run the development server with:
