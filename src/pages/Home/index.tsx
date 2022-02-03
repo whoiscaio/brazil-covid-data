@@ -6,9 +6,11 @@ import Modal from '../../components/Modal';
 import useAxios from '../../hooks/useAxios';
 import StateInterface from '../../interfaces/StateInterface';
 import AppInfo from './AppInfo';
-import ImageBox from './ImageBox';
 import Popup from './Popup';
 import HomepageContainer from './styles';
+
+import { ReactComponent as MapComponent } from '../../assets/images/map.svg';
+import ImageBox from '../../components/ImageBox';
 
 const REQUEST_URL = 'https://covid19-brazil-api.now.sh/api/report/v1';
 
@@ -24,7 +26,7 @@ function HomePage() {
 
   const [modalState, setModalState] = useState<StateInterface | null>(null);
 
-  const mapRef = useRef<SVGAElement | null>(null);
+  const mapRef = useRef<SVGSVGElement | null>(null);
   const popupRef = useRef<HTMLDivElement | null>(null);
 
   const [data, loading] = useAxios(REQUEST_URL);
@@ -91,7 +93,9 @@ function HomePage() {
   return (
     <HomepageContainer>
       <AppInfo />
-      <ImageBox svgRef={mapRef} />
+      <ImageBox>
+        <MapComponent id="map-image" ref={mapRef} />
+      </ImageBox>
       { hoveredState
         && <Popup styles={popupStyle} popupRef={popupRef} hoveredState={hoveredState} />}
       {
