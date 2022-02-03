@@ -53,19 +53,4 @@ const ImageBoxContainer = styled.div`
   }
 `;
 
-const HomepageContainer = styled.main`
-  width: 95vw;
-  max-width: 1400px;
-
-  display: flex;
-  
-  margin: 0 auto;
-
-  @media (max-width: 750px) {
-    flex-direction: column;
-    align-items: center;
-  }
-`;
-
 export { ImageBoxContainer, PopupContainer };
-export default HomepageContainer;

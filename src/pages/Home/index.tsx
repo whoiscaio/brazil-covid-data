@@ -6,11 +6,11 @@ import Modal from '../../components/Modal';
 import useAxios from '../../hooks/useAxios';
 import StateInterface from '../../interfaces/StateInterface';
 import Popup from './Popup';
-import HomepageContainer from './styles';
 
 import { ReactComponent as MapComponent } from '../../assets/images/map.svg';
 import ImageBox from '../../components/ImageBox';
 import AppInfo from '../../components/AppInfo';
+import PageContainer from '../PageContainer';
 
 const REQUEST_URL = 'https://covid19-brazil-api.now.sh/api/report/v1';
 
@@ -91,7 +91,7 @@ function HomePage() {
   }, [data, loading]);
 
   return (
-    <HomepageContainer>
+    <PageContainer>
       <AppInfo>
         <h1>Real-time covid data in Brazil</h1>
         <p>
@@ -107,7 +107,7 @@ function HomePage() {
       {
         modalState && <Modal state={modalState} close={closeModal} />
       }
-    </HomepageContainer>
+    </PageContainer>
   );
 }
 
