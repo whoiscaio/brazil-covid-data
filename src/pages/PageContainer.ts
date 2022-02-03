@@ -1,6 +1,10 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-const PageContainer = styled.div`
+type PageContainerProps = {
+  aboutPage?: boolean,
+}
+
+const PageContainer = styled.div<PageContainerProps>`
   width: 95vw;
   max-width: 1400px;
 
@@ -13,10 +17,21 @@ const PageContainer = styled.div`
     padding-top: 10rem;
   }
 
-  @media (max-width: 750px) {
-    flex-direction: column;
-    align-items: center;
-  }
+  ${({ aboutPage }) => (
+    aboutPage
+      ? css`
+        @media (max-width: 999px) {
+          flex-direction: column;
+          align-items: center;
+        }
+      `
+      : css`
+        @media (max-width: 750px) {
+          flex-direction: column;
+          align-items: center;
+        }
+      `
+  )}
 `;
 
 export default PageContainer;

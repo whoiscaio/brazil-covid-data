@@ -8,7 +8,7 @@ function NotFound() {
     <PageContainer className="not-found-page">
       <NotFoundContainer>
         <h1>Sounds like you are lost...</h1>
-        <p>Click on the button below to get back to the track</p>
+        <p>Click on the button below to get back on track</p>
         <NavLink className="link-button" to="/">Let's go back</NavLink> {/* eslint-disable-line */}
       </NotFoundContainer>
     </PageContainer>
