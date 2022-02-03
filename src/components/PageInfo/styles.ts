@@ -23,6 +23,10 @@ const AppInfoContainer = styled.div`
     font-size: 2rem;
   }
 
+  a {
+    color: ${({ theme }) => theme.colors.contrast};
+  }
+
   @media (max-width: 999px) {
     h1 {
       font-size: 4.8rem;
