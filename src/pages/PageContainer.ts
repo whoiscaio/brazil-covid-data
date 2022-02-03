@@ -8,6 +8,11 @@ const PageContainer = styled.div`
   
   margin: 0 auto;
 
+  &.not-found-page {
+    text-align: center;
+    padding-top: 10rem;
+  }
+
   @media (max-width: 750px) {
     flex-direction: column;
     align-items: center;

@@ -9,8 +9,8 @@ import Popup from './Popup';
 
 import { ReactComponent as MapComponent } from '../../assets/images/map.svg';
 import ImageBox from '../../components/ImageBox';
-import AppInfo from '../../components/AppInfo';
 import PageContainer from '../PageContainer';
+import PageInfo from '../../components/PageInfo';
 
 const REQUEST_URL = 'https://covid19-brazil-api.now.sh/api/report/v1';
 
@@ -92,13 +92,13 @@ function HomePage() {
 
   return (
     <PageContainer>
-      <AppInfo>
+      <PageInfo>
         <h1>Real-time covid data in Brazil</h1>
         <p>
           Brazil Covid Data is a web application that allows you to see information
           about the pandemics on your state just by hovering it on the map.
         </p>
-      </AppInfo>
+      </PageInfo>
       <ImageBox>
         <MapComponent id="map-image" ref={mapRef} />
       </ImageBox>
