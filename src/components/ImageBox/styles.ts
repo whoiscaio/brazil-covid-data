@@ -38,7 +38,12 @@ const ImageBoxContainer = styled.div<ImageBoxContainerProps>`
     order: 2;
 
     #map-image {
-      width: 100%;
+      width: 75%;
+
+      margin: 0;
+      margin-top: 2rem;
+
+      transform: none;
     }
 
     #image {
@@ -52,9 +57,21 @@ const ImageBoxContainer = styled.div<ImageBoxContainerProps>`
     }
   }
 
+  @media (max-width: 550px) {
+    #map-image {
+      width: 85%;
+    }
+  }
+
   @media (max-width: 500px) {
     #image {
       width: 70%;
+    }
+  }
+
+  @media (max-width: 450px) {
+    #map-image {
+      width: 100%;
     }
   }
 `;
