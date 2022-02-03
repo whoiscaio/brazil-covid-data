@@ -1,6 +1,7 @@
 import {
   useEffect, useRef, useState,
 } from 'react';
+import Modal from '../../components/Modal';
 
 import useAxios from '../../hooks/useAxios';
 import StateInterface from '../../interfaces/StateInterface';
@@ -21,12 +22,29 @@ function HomePage() {
     transform: 'translate(-50%, calc(-50% - 1rem))',
   });
 
+  const [modalState, setModalState] = useState<StateInterface | null>(null);
+
   const mapRef = useRef<SVGAElement | null>(null);
   const popupRef = useRef<HTMLDivElement | null>(null);
 
   const [data, loading] = useAxios(REQUEST_URL);
 
   let states: HTMLCollection | null = null;
+
+  function closeModal() {
+    setModalState(null);
+  }
+
+  function handleStateLeave() {
+    setHoveredState(null);
+  }
+
+  function handleStateClick(e: any) {
+    const currentState = data.data.find((state: StateInterface) => state.uf === e.path[1].id);
+
+    setModalState(currentState);
+    setHoveredState(null);
+  }
 
   function handleStateMove(e: any) {
     if (!popupRef.current) return;
@@ -42,13 +60,9 @@ function HomePage() {
   }
 
   function handleStateEnter(e: any) {
-    const currentState = data.data.find((state: any) => state.uf === e.target.id);
+    const currentState = data.data.find((state: StateInterface) => state.uf === e.target.id);
 
     setHoveredState(currentState);
-  }
-
-  function handleStateLeave() {
-    setHoveredState(null);
   }
 
   useEffect(() => {
@@ -59,6 +73,7 @@ function HomePage() {
 
     convertedStates.forEach((state) => {
       state.addEventListener('mouseenter', handleStateEnter);
+      state.addEventListener('click', handleStateClick);
       state.addEventListener('mousemove', handleStateMove);
       state.addEventListener('mouseleave', handleStateLeave);
     });
@@ -66,11 +81,16 @@ function HomePage() {
     return () => {
       convertedStates.forEach((state) => {
         state.removeEventListener('mouseenter', handleStateEnter);
+        state.removeEventListener('click', handleStateClick);
         state.addEventListener('mousemove', handleStateMove);
         state.removeEventListener('mouseleave', handleStateLeave);
       });
     };
   }, [data, loading]);
+
+  useEffect(() => {
+    console.log('hovered state changed');
+  }, [hoveredState]);
 
   return (
     <HomepageContainer>
@@ -78,6 +98,9 @@ function HomePage() {
       <ImageBox svgRef={mapRef} />
       { hoveredState
         && <Popup styles={popupStyle} popupRef={popupRef} hoveredState={hoveredState} />}
+      {
+        modalState && <Modal state={modalState} close={closeModal} />
+      }
     </HomepageContainer>
   );
 }
