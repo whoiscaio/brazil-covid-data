@@ -1,4 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
+import {
+  useEffect, useRef, useState,
+} from 'react';
 
 import useAxios from '../../hooks/useAxios';
 import StateInterface from '../../interfaces/StateInterface';
@@ -11,18 +13,34 @@ const REQUEST_URL = 'https://covid19-brazil-api.now.sh/api/report/v1';
 
 function HomePage() {
   const [hoveredState, setHoveredState] = useState<StateInterface | null>(null);
+  const [popupStyle, setPopupStyle] = useState({
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    pointerEvents: 'none',
+  });
+
+  const mapRef = useRef<SVGAElement | null>(null);
 
   const [data, loading] = useAxios(REQUEST_URL);
-  const mapRef = useRef<SVGAElement | null>(null);
+
   let states: HTMLCollection | null = null;
 
-  function handleStateHover(e: any) {
-    const currentState = data.data.find((state: any) => state.uf === e.path[1].id);
+  function handleStateMove(e: any) {
+    setPopupStyle((prevState: any) => ({
+      ...prevState,
+      top: e.clientY - 50,
+      left: e.clientX,
+    }));
+  }
+
+  function handleStateEnter(e: any) {
+    const currentState = data.data.find((state: any) => state.uf === e.target.id);
 
     setHoveredState(currentState);
   }
 
-  function handleStateOver() {
+  function handleStateLeave() {
     setHoveredState(null);
   }
 
@@ -33,14 +51,16 @@ function HomePage() {
     const convertedStates = Array.prototype.slice.call(states);
 
     convertedStates.forEach((state) => {
-      state.addEventListener('mouseover', handleStateHover);
-      state.addEventListener('mouseout', handleStateOver);
+      state.addEventListener('mouseenter', handleStateEnter);
+      state.addEventListener('mousemove', handleStateMove);
+      state.addEventListener('mouseleave', handleStateLeave);
     });
 
     return () => {
       convertedStates.forEach((state) => {
-        state.removeEventListener('mouseover', handleStateHover);
-        state.removeEventListener('mouseout', handleStateOver);
+        state.removeEventListener('mouseenter', handleStateEnter);
+        state.addEventListener('mousemove', handleStateMove);
+        state.removeEventListener('mouseleave', handleStateLeave);
       });
     };
   }, [data, loading]);
@@ -49,7 +69,7 @@ function HomePage() {
     <HomepageContainer>
       <AppInfo />
       <ImageBox svgRef={mapRef} />
-      { hoveredState && <Popup hoveredState={hoveredState} /> }
+      { hoveredState && <Popup styles={popupStyle} hoveredState={hoveredState} /> }
     </HomepageContainer>
   );
 }

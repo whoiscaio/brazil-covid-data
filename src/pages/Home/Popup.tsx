@@ -2,16 +2,21 @@ import StateInterface from '../../interfaces/StateInterface';
 import { PopupContainer } from './styles';
 
 type PopupProps = {
-  hoveredState: StateInterface,
+  hoveredState: StateInterface, // eslint-disable-line
+  styles: {
+    position: any,
+    top: number | undefined,
+    left: number | undefined,
+  },
 }
 
-function Popup({ hoveredState }: PopupProps) {
-  console.log(hoveredState);
-
+function Popup({ styles }: PopupProps) {
   return (
-    <PopupContainer>
-      Popup
-    </PopupContainer>
+    <div className="wrapper" style={styles}>
+      <PopupContainer>
+        Popup
+      </PopupContainer>
+    </div>
   );
 }
 
