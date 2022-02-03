@@ -31,7 +31,7 @@ function Modal({ state, close }: ModalProps) {
     (
       <Overlay ref={overlayRef}>
         <ModalContainer>
-          <h1>{state.state}</h1>
+          <h3>{state.state}</h3>
           <button type="button" onClick={close}>
             <img src={closeIcon} alt="Close" />
           </button>

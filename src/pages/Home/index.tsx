@@ -88,10 +88,6 @@ function HomePage() {
     };
   }, [data, loading]);
 
-  useEffect(() => {
-    console.log('hovered state changed');
-  }, [hoveredState]);
-
   return (
     <HomepageContainer>
       <AppInfo />
