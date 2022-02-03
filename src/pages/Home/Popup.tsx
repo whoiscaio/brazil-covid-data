@@ -3,6 +3,7 @@ import { PopupContainer } from './styles';
 
 type PopupProps = {
   hoveredState: StateInterface,
+  popupRef: any,
   styles: {
     position: any,
     top: number | undefined,
@@ -10,14 +11,14 @@ type PopupProps = {
   },
 }
 
-function Popup({ hoveredState, styles }: PopupProps) {
+function Popup({ hoveredState, styles, popupRef }: PopupProps) {
   const {
     state, cases, deaths, suspects,
   } = hoveredState;
 
   return (
     <div className="wrapper" style={styles}>
-      <PopupContainer>
+      <PopupContainer ref={popupRef}>
         <h3>{state}</h3>
         <div className="info">
           <p>

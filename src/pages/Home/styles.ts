@@ -9,6 +9,7 @@ const PopupContainer = styled.div`
 
   h3, p {
     color: ${({ theme }) => theme.colors.text};
+    white-space: nowrap;
   }
 
   h3 {
@@ -24,6 +25,7 @@ const PopupContainer = styled.div`
 
 const ImageBoxContainer = styled.div`
   flex: 1;
+  overflow: hidden;
 
   #image {
     width: 85%;

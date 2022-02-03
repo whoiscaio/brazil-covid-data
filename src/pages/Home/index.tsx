@@ -22,16 +22,22 @@ function HomePage() {
   });
 
   const mapRef = useRef<SVGAElement | null>(null);
+  const popupRef = useRef<HTMLDivElement | null>(null);
 
   const [data, loading] = useAxios(REQUEST_URL);
 
   let states: HTMLCollection | null = null;
 
   function handleStateMove(e: any) {
+    if (!popupRef.current) return;
+
+    const popupRealPosition = e.clientX + (popupRef.current.offsetWidth / 2);
+    const popupLimitPosition = window.innerWidth - (popupRef.current.offsetWidth / 2);
+
     setPopupStyle((prevState: any) => ({
       ...prevState,
       top: e.clientY - 50,
-      left: e.clientX,
+      left: popupRealPosition > window.innerWidth ? popupLimitPosition : e.clientX,
     }));
   }
 
@@ -70,7 +76,8 @@ function HomePage() {
     <HomepageContainer>
       <AppInfo />
       <ImageBox svgRef={mapRef} />
-      { hoveredState && <Popup styles={popupStyle} hoveredState={hoveredState} /> }
+      { hoveredState
+        && <Popup styles={popupStyle} popupRef={popupRef} hoveredState={hoveredState} />}
     </HomepageContainer>
   );
 }
