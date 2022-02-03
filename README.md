@@ -56,6 +56,6 @@ And you're ready to go!
 
 ## Autor
 
-- Github: [@whoiscaio](https://www.github.com/octokatherine)
+- Github: [@whoiscaio](https://www.github.com/whoiscaio)
 - Linkedin: [Caio Lima](https://www.linkedin.com/in/lima-caio)
 
