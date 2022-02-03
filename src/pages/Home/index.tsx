@@ -5,12 +5,12 @@ import Modal from '../../components/Modal';
 
 import useAxios from '../../hooks/useAxios';
 import StateInterface from '../../interfaces/StateInterface';
-import AppInfo from './AppInfo';
 import Popup from './Popup';
 import HomepageContainer from './styles';
 
 import { ReactComponent as MapComponent } from '../../assets/images/map.svg';
 import ImageBox from '../../components/ImageBox';
+import AppInfo from '../../components/AppInfo';
 
 const REQUEST_URL = 'https://covid19-brazil-api.now.sh/api/report/v1';
 
@@ -92,7 +92,13 @@ function HomePage() {
 
   return (
     <HomepageContainer>
-      <AppInfo />
+      <AppInfo>
+        <h1>Real-time covid data in Brazil</h1>
+        <p>
+          Brazil Covid Data is a web application that allows you to see information
+          about the pandemics on your state just by hovering it on the map.
+        </p>
+      </AppInfo>
       <ImageBox>
         <MapComponent id="map-image" ref={mapRef} />
       </ImageBox>
