@@ -18,6 +18,7 @@ function HomePage() {
     top: 0,
     left: 0,
     pointerEvents: 'none',
+    transform: 'translate(-50%, calc(-50% - 1rem))',
   });
 
   const mapRef = useRef<SVGAElement | null>(null);

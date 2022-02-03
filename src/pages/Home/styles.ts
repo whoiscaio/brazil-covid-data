@@ -1,6 +1,24 @@
 import styled from 'styled-components';
 
 const PopupContainer = styled.div`
+  background-color: ${({ theme }) => theme.colors.background};
+  border-radius: ${({ theme }) => theme.measures.borderRadius};
+  box-shadow: ${({ theme }) => theme.measures.boxShadow};
+
+  padding: 1rem;
+
+  h3, p {
+    color: ${({ theme }) => theme.colors.text};
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    margin-bottom: .6rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
 
 `;
 

@@ -6,6 +6,7 @@ const pattern = {
   },
   measures: {
     borderRadius: '.8rem',
+    boxShadow: '0px 0px 19px 2px rgba(0,0,0,0.12)',
   },
 };
 
