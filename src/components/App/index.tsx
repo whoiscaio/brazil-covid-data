@@ -1,19 +1,16 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import { ThemeProvider } from 'styled-components';
-import GlobalStyle from '../../styles/GlobalStyle';
 
+import GlobalStyle from '../../styles/GlobalStyle';
+import { ThemeContext } from '../../contexts/ThemeContext';
 import { dark, light } from '../../styles/themes';
 import Header from '../Header';
 import Router from '../Router';
 
 function App() {
-  const [theme, setTheme] = useState<string>('light');
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   const currentTheme = theme === 'dark' ? dark : light;
-
-  function toggleTheme() {
-    setTheme((prevState) => (prevState === 'dark' ? 'light' : 'dark'));
-  }
 
   return (
     <ThemeProvider theme={currentTheme}>

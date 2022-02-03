@@ -1,4 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+type ModalProps = {
+  currentTheme: string,
+}
 
 const Overlay = styled.div`
   background-color: #00000088;
@@ -17,7 +21,7 @@ const Overlay = styled.div`
   z-index: 1000;
 `;
 
-const ModalContainer = styled.div`
+const ModalContainer = styled.div<ModalProps>`
   background: ${({ theme }) => theme.colors.background};
   border-radius: ${({ theme }) => theme.measures.borderRadius};
   
@@ -31,6 +35,9 @@ const ModalContainer = styled.div`
   cursor: initial;
   z-index: 2000;
 
+  h3, p {
+    color: ${({ theme }) => theme.colors.text};
+  }
 
   h3 {
     font-size: 3rem;
@@ -48,6 +55,12 @@ const ModalContainer = styled.div`
     right: 1rem;
 
     cursor: pointer;
+
+    ${({ currentTheme }) => currentTheme === 'dark' && css`
+      img {
+        filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(249deg) brightness(105%) contrast(101%);
+      }
+    `}
   }
 `;
 

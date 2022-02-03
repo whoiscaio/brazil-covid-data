@@ -1,10 +1,11 @@
-import { useEffect, useRef } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 
 import StateInterface from '../../interfaces/StateInterface';
 import ModalContainer, { Overlay } from './styles';
 
 import closeIcon from '../../assets/images/close.svg';
+import { ThemeContext } from '../../contexts/ThemeContext';
 
 type ModalProps = {
   state: StateInterface | null,
@@ -12,6 +13,7 @@ type ModalProps = {
 }
 
 function Modal({ state, close }: ModalProps) {
+  const { theme } = useContext(ThemeContext);
   const overlayRef = useRef<HTMLDivElement | null>(null);
 
   const modalPortal = document.getElementById('modal-portal');
@@ -30,7 +32,7 @@ function Modal({ state, close }: ModalProps) {
   return ReactDOM.createPortal(
     (
       <Overlay ref={overlayRef}>
-        <ModalContainer>
+        <ModalContainer currentTheme={theme}>
           <h3>{state.state}</h3>
           <button type="button" onClick={close}>
             <img src={closeIcon} alt="Close" />
