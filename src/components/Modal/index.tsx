@@ -41,17 +41,17 @@ function Modal({ state, close }: ModalProps) {
             <p>
               Cases:
               {' '}
-              {state.cases}
+              {(state.cases || 0).toLocaleString('en-US')}
             </p>
             <p>
               Deaths:
               {' '}
-              {state.deaths}
+              {(state.deaths || 0).toLocaleString('en-US')}
             </p>
             <p>
               Suspects:
               {' '}
-              {state.suspects}
+              {(state.suspects || 0).toLocaleString('en-US')}
             </p>
           </div>
         </ModalContainer>
