@@ -24,17 +24,17 @@ function Popup({ hoveredState, styles, popupRef }: PopupProps) {
           <p>
             Cases:
             {' '}
-            {cases}
+            {(cases || 0).toLocaleString('en-US')}
           </p>
           <p>
             Deaths:
             {' '}
-            {deaths}
+            {(deaths || 0).toLocaleString('en-US')}
           </p>
           <p>
             Suspects:
             {' '}
-            {suspects}
+            {(suspects || 0).toLocaleString('en-US')}
           </p>
         </div>
       </PopupContainer>
