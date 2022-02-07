@@ -23,6 +23,7 @@ function HomePage() {
     pointerEvents: 'none',
     transform: 'translate(-50%, calc(-50% - 1rem))',
   });
+  const [allCountryInformation, setAllCountryInformation] = useState<StateInterface | null>(null);
 
   const [modalState, setModalState] = useState<StateInterface | null>(null);
 
@@ -32,6 +33,26 @@ function HomePage() {
   const [data, loading] = useAxios(REQUEST_URL);
 
   let states: HTMLCollection | null = null;
+
+  function generateAllCountryInformation(statesData: StateInterface[]) {
+    if (!statesData) return null;
+
+    let totalCases = 0;
+    let totalDeaths = 0;
+    let totalSuspects = 0;
+
+    statesData.forEach((stateData) => {
+      totalCases += stateData.cases;
+      totalDeaths += stateData.deaths;
+      totalSuspects += stateData.suspects;
+    });
+
+    setAllCountryInformation({
+      cases: totalCases,
+      deaths: totalDeaths,
+      suspects: totalSuspects,
+    });
+  }
 
   function closeModal() {
     setModalState(null);
@@ -73,6 +94,8 @@ function HomePage() {
     states = mapRef.current.children;
     const convertedStates = Array.prototype.slice.call(states);
 
+    generateAllCountryInformation(data.data);
+
     convertedStates.forEach((state) => {
       state.addEventListener('mouseenter', handleStateEnter);
       state.addEventListener('click', handleStateClick);
@@ -98,6 +121,20 @@ function HomePage() {
           Brazil Covid Data is a web application that allows you to see information
           about the pandemics on your state just by hovering it on the map.
         </p>
+        <div className="all-country-overview">
+          <div className="cases">
+            <span>Cases</span>
+            <p>{allCountryInformation?.cases}</p>
+          </div>
+          <div className="deaths">
+            <span>Deaths</span>
+            <p>{allCountryInformation?.deaths}</p>
+          </div>
+          <div className="suspects">
+            <span>Suspects</span>
+            <p>{allCountryInformation?.suspects}</p>
+          </div>
+        </div>
       </PageInfo>
       <ImageBox>
         <MapComponent id="map-image" ref={mapRef} />
