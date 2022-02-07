@@ -60,8 +60,8 @@ const AppInfoContainer = styled.div`
       justify-content: center;
 
       &.deaths {
-        border-right: 1px solid ${({ theme }) => theme.colors.background};
-        border-left: 1px solid ${({ theme }) => theme.colors.background};
+        border-right: 1px solid #F6EDD9;
+        border-left: 1px solid #F6EDD9;
       }
     }
   }
