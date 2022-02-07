@@ -124,15 +124,15 @@ function HomePage() {
         <div className="all-country-overview">
           <div className="cases">
             <span>Cases</span>
-            <p>{allCountryInformation?.cases}</p>
+            <p>{(allCountryInformation?.cases || 0).toLocaleString('en-US')}</p>
           </div>
           <div className="deaths">
             <span>Deaths</span>
-            <p>{allCountryInformation?.deaths}</p>
+            <p>{(allCountryInformation?.deaths || 0).toLocaleString('en-US')}</p>
           </div>
           <div className="suspects">
             <span>Suspects</span>
-            <p>{allCountryInformation?.suspects}</p>
+            <p>{(allCountryInformation?.suspects || 0).toLocaleString('en-US')}</p>
           </div>
         </div>
       </PageInfo>
