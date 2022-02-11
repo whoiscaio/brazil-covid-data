@@ -3,6 +3,13 @@ const pattern = {
     primary: '#4CAF50',
     darkPrimary: '#003400',
     contrast: '#0062A0',
+    map: {
+      fullGreen: '#008450',
+      midGreenYellow: '#98A41D',
+      fullYellow: '#EFB700',
+      midYellowRed: '#D1630A',
+      fullRed: '#B81D13',
+    },
   },
   measures: {
     borderRadius: '.8rem',

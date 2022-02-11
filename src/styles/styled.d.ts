@@ -8,6 +8,13 @@ declare module 'styled-components' {
       contrast: string,
       background: string,
       text: string,
+      map: {
+        fullGreen: string,
+        midGreenYellow: string,
+        fullYellow: string,
+        midYellowRed: string,
+        fullRed: string,
+      },
     },
     measures: {
       borderRadius: string,
