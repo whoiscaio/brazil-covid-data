@@ -54,6 +54,26 @@ function HomePage() {
     });
   }
 
+  function generateStatesColor(statesElements: SVGGElement[], statesData: StateInterface[]) {
+    statesElements.forEach((stateElement) => {
+      statesData.forEach((stateData) => {
+        if (stateElement.id === stateData.uf) {
+          if (stateData.cases < 500000) {
+            stateElement.classList.add('low-cases');
+          } else if (stateData.cases >= 500000 && stateData.cases < 800000) {
+            stateElement.classList.add('lowmid-cases');
+          } else if (stateData.cases >= 800000 && stateData.cases < 1300000) {
+            stateElement.classList.add('mid-cases');
+          } else if (stateData.cases >= 1300000 && stateData.cases < 1600000) {
+            stateElement.classList.add('midhigh-cases');
+          } else {
+            stateElement.classList.add('high-cases');
+          }
+        }
+      });
+    });
+  }
+
   function closeModal() {
     setModalState(null);
   }
@@ -95,6 +115,7 @@ function HomePage() {
     const convertedStates = Array.prototype.slice.call(states);
 
     generateAllCountryInformation(data.data);
+    generateStatesColor(convertedStates, data.data);
 
     convertedStates.forEach((state) => {
       state.addEventListener('mouseenter', handleStateEnter);
