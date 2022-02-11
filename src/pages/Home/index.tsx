@@ -60,8 +60,6 @@ function HomePage() {
         if (stateElement.id === stateData.uf) {
           const relationCaseToDeath = (stateData.deaths * 100) / stateData.cases;
 
-          console.log(stateElement.id, relationCaseToDeath);
-
           if (relationCaseToDeath < 1.5) {
             stateElement.classList.add('low-risk');
           } else if (relationCaseToDeath >= 1.5 && relationCaseToDeath < 2) {
@@ -73,19 +71,6 @@ function HomePage() {
           } else {
             stateElement.classList.add('high-risk');
           }
-          /*
-          if (stateData.cases < 800000) {
-            stateElement.classList.add('low-cases');
-          } else if (stateData.cases >= 800000 && stateData.cases < 1300000) {
-            stateElement.classList.add('lowmid-cases');
-          } else if (stateData.cases >= 1300000 && stateData.cases < 1600000) {
-            stateElement.classList.add('mid-cases');
-          } else if (stateData.cases >= 1600000 && stateData.cases < 1900000) {
-            stateElement.classList.add('midhigh-cases');
-          } else {
-            stateElement.classList.add('high-cases');
-          }
-          */
         }
       });
     });
