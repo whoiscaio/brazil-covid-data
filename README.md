@@ -5,15 +5,15 @@ Brazil Covid Data is a web application that allows you to see information about 
 
 ### Light Mode
 
-![Desktop Screenshot](./.github/desktop-screenshot-light-mode.png)
+![Desktop Screenshot](./.github/desktop-light.png)
 
-![Mobile Screenshot](./.github/mobile-screenshot-light-mode.png)
+![Mobile Screenshot](./.github/mobile-light.png)
 
 ### Dark Mode
 
-![Desktop Screenshot](./.github/desktop-screenshot-dark-mode.png)
+![Desktop Screenshot](./.github/desktop-dark.png)
 
-![Mobile Screenshot](./.github/mobile-screenshot-dark-mode.png)
+![Mobile Screenshot](./.github/mobile-dark.png)
 
 
 ## Setup
