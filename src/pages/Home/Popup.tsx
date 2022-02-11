@@ -16,6 +16,8 @@ function Popup({ hoveredState, styles, popupRef }: PopupProps) {
     state, cases, deaths, suspects,
   } = hoveredState;
 
+  const relationCaseToDeath = (deaths * 100) / cases;
+
   return (
     <div className="wrapper" style={styles}>
       <PopupContainer ref={popupRef}>
@@ -35,6 +37,11 @@ function Popup({ hoveredState, styles, popupRef }: PopupProps) {
             Suspects:
             {' '}
             {(suspects || 0).toLocaleString('en-US')}
+          </p>
+          <p>
+            Death per million:
+            {' '}
+            {(1000000 * (relationCaseToDeath / 100) || 0).toLocaleString('en-US')}
           </p>
         </div>
       </PopupContainer>

@@ -19,6 +19,8 @@ function Modal({ state, close }: ModalProps) {
   const modalPortal = document.getElementById('modal-portal');
   if (!modalPortal || !state) return null;
 
+  const relationCaseToDeath = (state.deaths * 100) / state.cases;
+
   function handleWindowClick(e: MouseEvent) {
     if (e.target === overlayRef.current) {
       close();
@@ -52,6 +54,11 @@ function Modal({ state, close }: ModalProps) {
               Suspects:
               {' '}
               {(state.suspects || 0).toLocaleString('en-US')}
+            </p>
+            <p>
+              Death per million:
+              {' '}
+              {(1000000 * (relationCaseToDeath / 100) || 0).toLocaleString('en-US')}
             </p>
           </div>
         </ModalContainer>
