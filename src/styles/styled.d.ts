@@ -9,11 +9,11 @@ declare module 'styled-components' {
       background: string,
       text: string,
       map: {
-        fullGreen: string,
-        midGreenYellow: string,
-        fullYellow: string,
-        midYellowRed: string,
-        fullRed: string,
+        lowRisk: string,
+        lowMidRisk: string,
+        midRisk: string,
+        highMidRisk: string,
+        highRisk: string,
       },
     },
     measures: {

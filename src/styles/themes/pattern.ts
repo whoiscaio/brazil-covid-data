@@ -4,11 +4,11 @@ const pattern = {
     darkPrimary: '#003400',
     contrast: '#0062A0',
     map: {
-      fullGreen: '#008450',
-      midGreenYellow: '#98A41D',
-      fullYellow: '#EFB700',
-      midYellowRed: '#D1630A',
-      fullRed: '#B81D13',
+      lowRisk: '#EFB700',
+      lowMidRisk: '#E08D05',
+      midRisk: '#D1630A',
+      highMidRisk: '#C7470E',
+      highRisk: '#B81D13',
     },
   },
   measures: {

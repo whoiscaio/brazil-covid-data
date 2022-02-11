@@ -29,23 +29,23 @@ const ImageBoxContainer = styled.div<ImageBoxContainerProps>`
 
     g {
       &.low-risk path {
-        fill: ${({ theme }) => theme.colors.map.fullGreen} !important;
+        fill: ${({ theme }) => theme.colors.map.lowRisk} !important;
       }
 
       &.midlow-risk path {
-        fill: ${({ theme }) => theme.colors.map.midGreenYellow} !important;
+        fill: ${({ theme }) => theme.colors.map.lowMidRisk} !important;
       }
 
       &.mid-risk path {
-        fill: ${({ theme }) => theme.colors.map.fullYellow} !important;
+        fill: ${({ theme }) => theme.colors.map.midRisk} !important;
       }
 
       &.midhigh-risk path {
-        fill: ${({ theme }) => theme.colors.map.midYellowRed} !important;
+        fill: ${({ theme }) => theme.colors.map.highMidRisk} !important;
       }
 
       &.high-risk path {
-        fill: ${({ theme }) => theme.colors.map.fullRed} !important;
+        fill: ${({ theme }) => theme.colors.map.highRisk} !important;
       }
     }
   }
