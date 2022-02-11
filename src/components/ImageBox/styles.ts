@@ -19,13 +19,33 @@ const ImageBoxContainer = styled.div<ImageBoxContainerProps>`
     transform: translate(10%, -5%);
 
     path {
-      fill: ${({ theme }) => theme.colors.contrast} !important;
-
       cursor: pointer;
       transition: opacity .1s ease-in;
 
       &:hover {
         opacity: .6;
+      }
+    }
+
+    g {
+      &.low-risk path {
+        fill: ${({ theme }) => theme.colors.map.fullGreen} !important;
+      }
+
+      &.midlow-risk path {
+        fill: ${({ theme }) => theme.colors.map.midGreenYellow} !important;
+      }
+
+      &.mid-risk path {
+        fill: ${({ theme }) => theme.colors.map.fullYellow} !important;
+      }
+
+      &.midhigh-risk path {
+        fill: ${({ theme }) => theme.colors.map.midYellowRed} !important;
+      }
+
+      &.high-risk path {
+        fill: ${({ theme }) => theme.colors.map.fullRed} !important;
       }
     }
   }
