@@ -74,7 +74,7 @@ const HeaderContainer = styled.header<StyledHeaderProps>`
     color: ${({ theme }) => theme.colors.text};
     font-size: 1.6rem;
 
-    transition: opacity .14s ease-in;
+    transition: opacity, color, .14s ease-in;
 
     &:hover {
       opacity: .8;

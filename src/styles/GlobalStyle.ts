@@ -14,10 +14,15 @@ export default createGlobalStyle`
 
   html, body {
     background: ${({ theme }) => theme.colors.background};
+    transition: background .14s ease-in;
   }
 
   a {
     text-decoration: none;
+  }
+  
+  a, h1, h2, h3, h4, h5, p {
+    transition: color .14s ease-in;
   }
 
   button {
