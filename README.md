@@ -1,61 +1,73 @@
+
 # Brazil Covid Data
 
-Brazil Covid Data is a web application that allows you to see information about the pandemics on your state just by hovering it on the map.
-## Screenshots
+## Índice
 
-### Light Mode
+- [Sobre](#sobre)
+- [Screenshots](#screenshots)
+- [Links](#links)
+- [Para desenvolvedores](#para-desenvolvedores)
+  - [Rodando localmente](#rodando-localmente)
+  - [Licença](#licença)
+  
+### Sobre
 
-![Desktop Screenshot](./.github/desktop-light.png)
+Página dedicada á divulgação e acompanhamento dos dados sobre a pandemia de Covid-19 no Brasil e em seus estados.
 
-![Mobile Screenshot](./.github/mobile-light.png)
+### Screenshots
 
-### Dark Mode
+<div>
+  <img src="./.github/desktop-light.png" width="400" />
+  <img src="./.github/desktop-dark.png" width="400" />
+</div>
 
-![Desktop Screenshot](./.github/desktop-dark.png)
+<div>
+  <img src="./.github/mobile-light.png" width="400" />
+  <img src="./.github/mobile-dark.png" width="400" />
+</div>
 
-![Mobile Screenshot](./.github/mobile-dark.png)
+### Links
+
+Visualize a página através desse [link](https://whoiscaio.github.io/blogr-landing-page-main/).
 
 
-## Setup
+## Para desenvolvedores
 
-Go to the desired folder and run
+### Tecnologias
+
+HTML - Linguagem de marcação para estruturação da página. <br />
+CSS - Linguagem de estilização para definição de estilos aos elementos. <br />
+Typescript - Linguagem de programação baseada em Javascript com tipagem. <br />
+React - Framework Javascript para o desenvolvimento de UIs reativas. <br />
+Context API - Biblioteca React para a manipulação de estados globais. <br />
+Styled-Components - Biblioteca React para a criação de componentes estilizados. <br />
+
+### Rodando localmente
+
+Clone o projeto
 
 ```bash
-  $ git clone https://github.com/whoiscaio/brazil-covid-data
-
-  $ cd brazil-covid-data
+  git clone https://github.com/whoiscaio/brazil-covid-data
 ```
 
-Then, install the packages and run the development server with:
-(NPM)
+Entre no diretório do projeto
 
 ```bash
-  $ npm install
-
-  $ npm run start
+  cd my-project
 ```
 
-or: (YARN)
+Instale as dependências
 
 ```bash
-  $ yarn
-
-  $ yarn start
+  npm install
 ```
 
-And you're ready to go!
+Inicie o servidor
 
+```bash
+  npm run start
+```
 
-    
-## Stack
+### Licença
 
-**Front-end:** React, Typescript, Context API and Styled-Components.
-
-**API:** [Covid-19 Brazil API](https://covid19-brazil-api.vercel.app/)
-
-
-## Autor
-
-- Github: [@whoiscaio](https://www.github.com/whoiscaio)
-- Linkedin: [Caio Lima](https://www.linkedin.com/in/lima-caio)
-
+[MIT](https://choosealicense.com/licenses/mit/)
