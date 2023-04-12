@@ -7,6 +7,7 @@
 - [Screenshots](#screenshots)
 - [Links](#links)
 - [Para desenvolvedores](#para-desenvolvedores)
+  - [Tecnologias](#tecnologias) 
   - [Rodando localmente](#rodando-localmente)
   - [Licença](#licença)
   
