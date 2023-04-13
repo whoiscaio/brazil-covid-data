@@ -22,11 +22,6 @@ Página dedicada á divulgação e acompanhamento dos dados sobre a pandemia de 
   <img src="./.github/desktop-dark.png" width="400" />
 </div>
 
-<div>
-  <img src="./.github/mobile-light.png" width="400" />
-  <img src="./.github/mobile-dark.png" width="400" />
-</div>
-
 ### Links
 
 Visualize a página através desse [link](https://whoiscaio.github.io/blogr-landing-page-main/).
